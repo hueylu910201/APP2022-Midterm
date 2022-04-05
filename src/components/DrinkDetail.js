@@ -25,7 +25,7 @@ const DrinkDetail = ({ drink, navigation }) => {
       <Box p={1} _dark={{ bg: "blueGray.900" }}
         _light={{ bg: "white" }}>
         <Pressable 
-          onPress={() => navigation.navigate('Detail', album)}
+          onPress={() => navigation.navigate('Detail', drink)}
         >
           <AspectRatio w="100%" ratio={1}>
             <Image
