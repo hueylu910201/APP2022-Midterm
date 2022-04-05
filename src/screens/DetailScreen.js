@@ -20,7 +20,7 @@ const DetailScreen = ({ route }) => {
         <AspectRatio w="100%" ratio={16 / 9}>
           <Image
             source={{uri: image }}
-            alt='albumImage'
+            alt='drinkImage'
           />
         </AspectRatio>
         <Box shadow={1} _dark={{ bg: "blueGray.900", borderColor: 'blueGray.500', borderWidth: 0.6 }}
