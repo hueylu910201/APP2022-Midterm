@@ -1,5 +1,5 @@
 import React ,{useState}from "react";
-import { Box, HStack, VStack, AspectRatio, Text, Image, Pressable} from "native-base"
+import { Box, HStack, VStack, AspectRatio, Text, Image, Pressable , useColorMode} from "native-base"
 import  Starrating from "./Starrating";
 import {TouchableOpacity} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -10,6 +10,7 @@ const DrinkDetail = ({ drink, navigation }) => {
     const toggleFunction = () => {
         setToggle(!toggle);
     };
+    const { colorMode } = useColorMode();
   return (
     <Box padding={3} 
       borderWidth={2} borderRightRadius={5} borderColor="#dcebfa"
@@ -29,11 +30,16 @@ const DrinkDetail = ({ drink, navigation }) => {
         </AspectRatio>
         <VStack paddingLeft={2} >
           <HStack>
-            <Text fontSize={26} fontWeight="bold">{drink.title}</Text>
-            <TouchableOpacity onPress={() => toggleFunction()}>
-                  <Text paddingLeft={3} paddingTop="2.5">{toggle ? <MaterialCommunityIcons name={'heart-outline'} color={'black'} size={25}  />:
-                                  <MaterialCommunityIcons name={'heart'} color={'#ff5e5e'} size={25} />}
-                  </Text>
+            <Text fontSize={26} fontWeight="700">{drink.title}</Text>
+            <TouchableOpacity onPress={() => toggleFunction()} >
+                <Box name={'heart-outline'} color={'red'}>
+                  <Text paddingLeft={3} paddingTop="2.5">{toggle ? 
+             
+                    <MaterialCommunityIcons name={'heart-outline'} color={colorMode == "light" ? "black" : "white"}  size={25} />:
+                    <MaterialCommunityIcons name={'heart'} color={'#ff5e5e'} size={25} />}
+                  
+                   </Text>
+                </Box>    
               </TouchableOpacity>
           </HStack>
           <Text fontSize={18}>{drink.address}</Text>
@@ -46,30 +52,6 @@ const DrinkDetail = ({ drink, navigation }) => {
         </VStack>
       </HStack>
       </Pressable>
-      {/* <Box p={1} _dark={{ bg: "blueGray.900" }}
-        _light={{ bg: "white" }}>
-        
-        
-          <AspectRatio w="100%" ratio={1}>
-            <Image
-              source={{ uri: drink.image }}
-              alt="drink"
-            />            
-
-          *****<Pressable 
-          onPress={() => navigation.navigate('Detail', album)}
-        >
-          <AspectRatio w="100%" ratio={1}>
-            <Image
-              source={{ uri: album.image }}
-              alt="album"
-            />            
-          </AspectRatio>
-        </Pressable>*****
-
-          </AspectRatio>
-        </Pressable>
-      </Box>    */}
     </Box>
   )};
 

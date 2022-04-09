@@ -1,20 +1,29 @@
 import React from 'react';
-import { Linking } from 'react-native';
-import { Center, ScrollView, Box, AspectRatio, Text, Heading, Image, Button } from "native-base";
+import { Linking, Pressable } from 'react-native';
+import { useTheme } from '@react-navigation/native';
+import { Center, ScrollView, Box, AspectRatio, Text, Heading, Image, Button, VStack ,color, HStack, useColorMode} from "native-base";
+import Starrating_detail from "../components/Starrating_detail"
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-
-const DetailScreen = ({ route }) => {
-  const { title, 
-    artist,
-    price,
+const DetailScreen = ({ route , drink }) => {
+  const { 
+    title, 
     url,
+    urlIG,
+    urlWEB,
     image,
-    description
+    rate,
+    score,
+    address,
+    time,
+    menu,
+    tel
   } = route.params;
+  const { colorMode } = useColorMode();
   return (
     <Center 
       flex={1} _dark={{ bg: "blueGray.900" }}
-      _light={{ bg: "white" }}
+      _light={{ bg: "#E2F0FF" }}
     >
       <ScrollView >
         <AspectRatio w="100%" ratio={16 / 9}>
@@ -23,33 +32,58 @@ const DetailScreen = ({ route }) => {
             alt='drinkImage'
           />
         </AspectRatio>
-        <Box shadow={1} _dark={{ bg: "blueGray.900", borderColor: 'blueGray.500', borderWidth: 0.6 }}
+        <Box shadow={1} borderRadius={10} _dark={{ bg: "#252a2e", borderColor: 'blueGray.500', borderWidth: 0.6 }}
         _light={{ bg: "blueGray.50" }} padding="2" margin="2">
-          <Center>
-            <Heading pt={1} fontSize="2xl" color='#6099E4'>Discount Now!</Heading>
-            <Heading fontSize="4xl">Price: ${price}</Heading>
+          <Center _light={{ bg: "#e9f0f5" }}>
+            <HStack></HStack>
+            <Heading pt={1} fontSize="4xl" color='#6099E4' marginLeft={"-60%"}>{title}</Heading>
+            <Box marginTop={"-9%"} marginLeft={"30%"} >
+              <Starrating_detail value={rate} />
+            </Box>
+            <Box marginTop={"3%"}> 
+              <Text fontSize={"14"} marginLeft={"87%"} fontWeight={"600"} marginTop={"-7%"}>{score}</Text>
+            </Box>
+           
+            <VStack marginLeft={"-30%"} marginTop={"5%"}  >
+
+              <Text fontSize={"18"} >地址:{address}</Text>
+              <Text fontSize={"18"} >電話:{tel}</Text>
+              <Text fontSize={"18"} >營業時間:{time}</Text>
+            </VStack>
+          <HStack marginTop={"6"} marginLeft={"50%"}>
+            <Box paddingRight={"5"}>
+              <Pressable onPress={()=>Linking.openURL(url)}>
+                <MaterialCommunityIcons  name="facebook" color={ colorMode == "light" ? "black" : "white"} size={45} />
+              </Pressable>
+            </Box>
+
+            <Box paddingRight={"5"}>
+              <Pressable onPress={()=>Linking.openURL(urlIG)}>
+                <MaterialCommunityIcons  name="instagram" color={ colorMode == "light" ? "black" : "white"} size={45} />
+              </Pressable>
+            </Box>
+
+            <Box>
+              <Pressable onPress={()=>Linking.openURL(urlWEB)}>
+                <MaterialCommunityIcons  name="web" color={ colorMode == "light" ? "black" : "white"} size={45} />
+              </Pressable>
+            </Box>
+          </HStack>
           </Center>
-          <Button 
-            mt="4"
-            onPress={() => Linking.openURL(url)}
-          >
-            Buy Now !
-          </Button>   
         </Box>
-        <Box shadow={1} _dark={{ bg: "blueGray.900", borderColor: 'blueGray.500', borderWidth: 0.6 }}
-        _light={{ bg: "blueGray.50" }} padding="2" margin="2">
-            <Text>
-              <Text bold>Artist: </Text>
-              {artist}
-            </Text>
-            <Text>            
-              <Text bold>Title: </Text>
-              {title}
-            </Text>
-            <Text mt='15' bold>Descriptions:</Text>
-            <Text>{'\t'}{description}</Text>
-        </Box>
-      </ScrollView>      
+        <HStack mx="auto" margin={"3"} paddingLeft={"40%"} paddingRight={"40%"} marginBottom={4} borderRadius={10}
+                _dark={{ bg: "#252a2e" }}
+                _light={{ bg: "#fff" }}>
+          <Text fontSize={22} fontWeight={"900"}>菜單</Text>
+        </HStack>  
+        <AspectRatio w="100%" ratio={16 / 9} marginBottom={8}>
+          <Image
+            source={{uri:menu}}
+            alt='menu'
+          />
+        </AspectRatio>      
+      </ScrollView>
+    
     </Center>
 
   );

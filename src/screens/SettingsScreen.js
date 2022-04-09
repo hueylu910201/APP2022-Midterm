@@ -13,7 +13,7 @@ const SettingsScreen = ({ navigation }) => {
                 mt="1" borderBottomWidth={1} borderColor="lightgray"
                 _dark={{ borderColor: 'blueGray.500', borderButtomWidth: 0.6 }}
             >
-                <ListItem title="Display" navigation={navigation} destination="DisplaySetting" />
+                <ListItem title="深色模式" navigation={navigation} destination="DisplaySetting" />
                 <ListItem title="Account" navigation={navigation} />
             </Box>            
         </Box>

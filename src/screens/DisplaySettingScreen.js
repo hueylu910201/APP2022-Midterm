@@ -19,10 +19,10 @@ const DisplaySettingScreen = () => {
             alignSelf="center"
          >
             <HStack space={8} alignItems="center" >
-               <Text fontSize="lg">{colorMode == "light" ? "Light Mode" : "Dark Mode"}</Text>
+               <Text fontSize="lg">{colorMode == "light" ? "深色模式" : "深色模式"}</Text>
                <Switch
                   name="light Mode"
-                  isChecked={colorMode === "light"}
+                  isChecked={colorMode === "dark"}
                   onToggle={toggleColorMode}
                   accessibilityLabel="display-mode"
                   accessibilityHint="light or dark mode"

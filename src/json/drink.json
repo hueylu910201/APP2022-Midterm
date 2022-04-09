@@ -1,15 +1,19 @@
 {
-    "drinkTitle": "Taylor Swift",
+    "drinkTitle": "The Drinking",
     "drinkList": [
        {
           "title": "米堤銀行",
           "address": "大安區復興南路二段327號",
-          "url": "https://www.amazon.com/Taylor-Swift/dp/B0014I4KH6",
-          "image": "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+          "url": "https://www.facebook.com/MilkTeaBank/",
+          "urlIG": "https://www.instagram.com/milkteabank/",
+          "urlWEB":"https://milkteabank.com.tw/",
+          "image": "https://live.staticflickr.com/65535/49781156282_e84337ff36_b.jpg",
           "thumbnail_image": "https://milkteabank.com.tw/wp-content/uploads/2020/04/50240902_1009612122580087_1444896843132567552_n.jpg",
           "score": "4.8/5.0",
           "rate":5,
-          "description": "Taylor Swift has been enhanced by the addition of 3 brand new tracks (\"I'm Only Me When I'm With You\", \"Invisible\", \"A Perfectly Good Heart\") and a pop version of the hit single Teardrops On My Guitar"
+          "time":"上午10:00 - 下午21:00",
+          "tel":"(02)2738-9238",
+          "menu":"https://yummyyummy.tw/wp-content/uploads/2021/06/20210615104530_58.jpg"
        },
        {
           "title": "可不可熟成紅茶",
@@ -18,6 +22,7 @@
           "image": "https://images-na.ssl-images-amazon.com/images/I/51qmhXWZBxL.jpg",
           "thumbnail_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd4diAVk3rYruvgW9oulOZZaWL4RxjizM8jI0S-YWzBZTWY083dkDKNSS7jxu_MwS20Ps&usqp=CAU",
           "score": "4.7/5.0",
+          "price": 10.66,
           "rate":5,
           "description": "Fearless is the 2008 sophomore album from Taylor Swift, the young Country singer/songwriter who charmed the hearts and charts of America beginning with her debut single 'Tim McGraw'. Her triple-platinum self-titled debut release has scanned over 3.4 million units and spent more weeks at #1 than any other Country album this year: 24 weeks! Taylor is the only Country female artist to have five Top 10 singles from a debut album and the only Country female vocalist this decade to reach the Top 5 on Billboard's Hot 100 Chart. Needless to say, she's a sensation that has only just begun to show what she is capable of. 13 tracks including the single 'Love Story' and 'Change', first heard during the 2008 Summer Olympics. --This text refers to the Audio CD edition."
        },
