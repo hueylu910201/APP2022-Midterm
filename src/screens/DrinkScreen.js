@@ -7,7 +7,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 const DrinkScreen = ({ navigation }) => {
   return (
     <Box>
-     
       <DrinkList 
         list={drinkData.drinkList}
         navigation={navigation}

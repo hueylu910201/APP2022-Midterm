@@ -1,5 +1,5 @@
 import React ,{useState}from "react";
-import { Box, HStack, VStack, AspectRatio, Text, Image, Pressable } from "native-base"
+import { Box, HStack, VStack, AspectRatio, Text, Image, Pressable} from "native-base"
 import  Starrating from "./Starrating";
 import {TouchableOpacity} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -31,7 +31,7 @@ const DrinkDetail = ({ drink, navigation }) => {
           <HStack>
             <Text fontSize={26} fontWeight="bold">{drink.title}</Text>
             <TouchableOpacity onPress={() => toggleFunction()}>
-                  <Text paddingLeft={3} paddingTop="2.5">{toggle ? <MaterialCommunityIcons name={'heart-outline'} color={'black'} size={25} />:
+                  <Text paddingLeft={3} paddingTop="2.5">{toggle ? <MaterialCommunityIcons name={'heart-outline'} color={'black'} size={25}  />:
                                   <MaterialCommunityIcons name={'heart'} color={'#ff5e5e'} size={25} />}
                   </Text>
               </TouchableOpacity>
