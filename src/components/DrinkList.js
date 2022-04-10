@@ -23,13 +23,13 @@ const DrinkList = ({ list, navigation }) => {
         </AspectRatio>
       </Box>
        <HStack mx="auto" m={5}>
-        <VStack mr="3">
+        <VStack mr="5">
           <Box bg="#dcebfa"  _dark={{ bg: "white" }}h={20} w={20} borderRadius={100}>
             <Box mx="auto" my="auto"><MaterialCommunityIcons  name="star" color={color} size={45} /></Box>
             </Box>
           <Box mx="auto"><Text>評價高低</Text></Box>
         </VStack>
-        <VStack mr="3">
+        <VStack mr="4">
           <Box bg="#dcebfa" h={20} w={20} borderRadius={100}  _dark={{ bg: "white" }}>
               <Box mx="auto" my="auto"><MaterialCommunityIcons  name="map-marker-distance" color={color} size={45} /></Box>
               </Box>

@@ -5,6 +5,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { StatusBar } from 'native-base';
 import { extendTheme, useColorMode} from 'native-base';
+import {LogBox} from 'react-native';
+
+LogBox.ignoreLogs(['NativeBase:']);
 
 import DrinkScreen from '../screens/DrinkScreen';
 import DetailScreen from '../screens/DetailScreen';
@@ -12,6 +15,7 @@ import SettingsScreen from '../screens/SettingsScreen';
 import NullScreen from '../screens/NullScreen';
 import ActionButton from '../components/ActionButton';
 import DisplaySettingScreen from '../screens/DisplaySettingScreen';
+import NoticeScreen from '../screens/NoticeScreen';
 import MyTheme from '../Theme';
 import DrinkList from '../components/DrinkList';
 import SearchBar from '../components/SearchBar';
@@ -65,20 +69,20 @@ const MyTabs = () => {
         component={HomeStack}
         options={{
           headerShown: false,
-          title: "Home",
+          title: "主頁",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" color={color} size={26} />
           ),
         }}
       />
       <Tab.Screen
-        name="favorite"
+        name="comment"
         component={HomeStack}
         options={{
           headerShown: false,
-          title: "avorite",
+          title: "討論區",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="heart" color={color} size={26} />
+            <MaterialCommunityIcons name="comment" color={color} size={26} />
           ),
         }}
       />
@@ -89,13 +93,13 @@ const MyTabs = () => {
         }}
       />
        <Tab.Screen
-        name="Home3"
-        component={DrinkList}
+        name="notice"
+        component={NoticeStack}
         options={{
           headerShown: false,
-          title: "Notice",
+          title: "通知",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="comment-multiple" color={color} size={26} />
+            <MaterialCommunityIcons name="bell" color={color} size={26} />
           ),
         }}
       />
@@ -111,7 +115,7 @@ const MyTabs = () => {
         component={SettingsStack}
         options={{
           headerShown: false,
-          title: "Settings",
+          title: "設定",
           headerTitleStyle: {
             fontWeight: '400',
             fontSize: 20
@@ -122,6 +126,29 @@ const MyTabs = () => {
         }}
       />
     </Tab.Navigator>
+  );
+}
+
+const NoticeStack=()=>{
+  const { colorMode } = useColorMode();
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Settings"
+        component={NoticeScreen}
+        options={{
+          title: "通知",
+          headerStyle: {
+            backgroundColor: colorMode == 'light' ? 'white' : 'black',
+          },
+          headerTitleStyle: {
+            color: colorMode == 'light' ? 'black' : 'white',
+            fontWeight: '400',
+            fontSize: 20
+          },
+        }}
+      />
+    </Stack.Navigator>
   );
 }
 
@@ -149,7 +176,7 @@ const SettingsStack = () => {
         name="DisplaySetting"
         component={DisplaySettingScreen}
         options={{
-          title: "Display",
+          title: "深色模式",
           headerStyle: {
             backgroundColor: colorMode == 'light' ? 'white' : 'black',
           },
@@ -178,7 +205,7 @@ const HomeStack = () => {
         name="Home"
         component={DrinkScreen}
         options={{
-          title: '',
+          title: '首頁',
           headerTitle:{
             
           },
@@ -190,6 +217,15 @@ const HomeStack = () => {
             fontWeight: '400',
             fontSize: 20
           },
+          headerRight: () => (
+            <MaterialCommunityIcons
+              name={'message-processing'}
+              size={24}
+              color={ colorMode == 'light' ? 'black' : 'white'}
+              onPress={() => alert("message")}
+              style={{ marginLeft: -3 }}
+            />
+          ),
         }}
       />
       <Stack.Screen
@@ -213,6 +249,7 @@ const HomeStack = () => {
             <MaterialCommunityIcons
               name={'chevron-left-circle-outline'}
               size={30}
+              color={ colorMode == 'light' ? 'black' : 'white'}
               onPress={() =>navigation.goBack()}
               style={{ marginLeft: 4 }}
             />

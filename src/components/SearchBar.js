@@ -12,7 +12,7 @@ function SearchBar() {
 }
 
 function Example() {
-  return <Center flex={1} px="2">
+  return <Center  >
       <SearchBar/>
     </Center>;
 }

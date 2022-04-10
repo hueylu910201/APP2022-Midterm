@@ -16,6 +16,7 @@ const DrinkScreen = ({ navigation }) => {
       <DrinkList 
         list={drinkData.drinkList}
         navigation={navigation}
+        keyExtractor={item => item.title}
       />
     </Box>
   );

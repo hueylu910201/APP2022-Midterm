@@ -13,9 +13,9 @@ const ListItem = ({ title, navigation, destination }) => {
         _dark={{
           bg: "blueGray.900",
           borderColor: "blueGray.500",
-          borderButtomWidth: 0.6,
+          borderButtomWidth: 1.0
         }}
-        _light={{ bg: "white" }}
+        _light={{ bg: "blue.100" }}
         px="4"
         py="4"
         borderTopWidth={1}
@@ -23,7 +23,7 @@ const ListItem = ({ title, navigation, destination }) => {
         justifyContent="space-between"
       >
         <Text fontSize={16}>{title}</Text>
-        <AntDesign name="right" color="gray" size={16} />
+        {/* <AntDesign name="right" color="gray" size={16} /> */}
       </HStack>
     </Pressable>
   );
