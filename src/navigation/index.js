@@ -17,6 +17,7 @@ import NullScreen from '../screens/NullScreen';
 import ActionButton from '../components/ActionButton';
 import DisplaySettingScreen from '../screens/DisplaySettingScreen';
 import NoticeScreen from '../screens/NoticeScreen';
+import GeneralAccountScreen from '../screens/GeneralAccountScreen';
 import MyTheme from '../Theme';
 import DrinkList from '../components/DrinkList';
 import SearchBar from '../components/SearchBar';
@@ -135,7 +136,7 @@ const NoticeStack=()=>{
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Settings"
+        name="Notice"
         component={NoticeScreen}
         options={{
           title: "通知",
@@ -176,18 +177,59 @@ const SettingsStack = () => {
       <Stack.Screen
         name="DisplaySetting"
         component={DisplaySettingScreen}
-        options={{
-          title: "深色模式",
+        options={({navigation}) => ({
+          title:"深色模式",
+          headerStyle: {
+            backgroundColor: '#fff',
+          },
+          headerTintColor: colorMode == 'light' ? 'black' : 'white',
           headerStyle: {
             backgroundColor: colorMode == 'light' ? 'white' : 'black',
           },
-          headerTintColor: colorMode == 'light' ? 'black' : 'white',
           headerTitleStyle: {
             color: colorMode == 'light' ? 'black' : 'white',
             fontWeight: '400',
             fontSize: 20
           },
-        }}
+          headerLeft: () => (
+            <MaterialCommunityIcons
+              name={'chevron-left-circle-outline'}
+              size={30}
+              color={ colorMode == 'light' ? 'black' : 'white'}
+              onPress={() =>navigation.goBack()}
+              style={{ marginLeft: 4 }}
+            />
+          )
+        })}
+      />
+
+      <Stack.Screen
+        name="AccountSetting"
+        component={GeneralAccountScreen}
+        options={({navigation}) => ({
+          title:"註冊帳號",
+          headerStyle: {
+            backgroundColor: '#fff',
+          },
+          headerTintColor: colorMode == 'light' ? 'black' : 'white',
+          headerStyle: {
+            backgroundColor: colorMode == 'light' ? 'white' : 'black',
+          },
+          headerTitleStyle: {
+            color: colorMode == 'light' ? 'black' : 'white',
+            fontWeight: '400',
+            fontSize: 20
+          },
+          headerLeft: () => (
+            <MaterialCommunityIcons
+              name={'chevron-left-circle-outline'}
+              size={30}
+              color={ colorMode == 'light' ? 'black' : 'white'}
+              onPress={() =>navigation.goBack()}
+              style={{ marginLeft: 4 }}
+            />
+          )
+        })}
       />
     </Stack.Navigator>
   );
@@ -218,6 +260,7 @@ const NewsStack=()=>{
             fontWeight: '400',
             fontSize: 20
           }
+ 
         }}
       />
     </Stack.Navigator>

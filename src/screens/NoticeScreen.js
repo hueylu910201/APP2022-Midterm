@@ -10,14 +10,16 @@ const NoticeScreen=({ drink, navigation })=>{
         _dark={{ bg: "blueGray.900" }}
         _light={{ bg: "#E2F0FF" }}        
        >
-           <HStack padding={5}  borderBottomWidth={1}borderBottomColor={"#b8b8b8"} _dark={{borderBottomColor:"#fff"}}>
-               <Text paddingTop={3} marginRight={2}> <MaterialCommunityIcons name="account-multiple-plus" size={35}/></Text>
-               
-                <Text fontSize={20}>註冊新帳號即可擁有折價券!</Text>
-                <Box paddingTop={2}><AntDesign name="right" color="gray" size={16} /></Box>
-                <Text paddingTop={3} fontSize={12}>5小時前</Text>
-                
-           </HStack>
+           <Pressable onPress={() => navigation.navigate('AccountSetting', drink)}>
+                <HStack padding={5}  borderBottomWidth={1}borderBottomColor={"#b8b8b8"} _dark={{borderBottomColor:"#fff"}}>
+                    <Text paddingTop={3} marginRight={2}> <MaterialCommunityIcons name="account-multiple-plus" size={35}/></Text>
+                    
+                        <Text fontSize={20}>註冊新帳號即可擁有折價券!</Text>
+                        <Box paddingTop={2}><AntDesign name="right" color="gray" size={16} /></Box>
+                        <Text paddingTop={3} fontSize={12}>5小時前</Text>
+                        
+                </HStack>
+           </Pressable>
             <Pressable onPress={() => navigation.navigate('News', drink)}>
                 <HStack padding={5}  borderBottomWidth={1}borderBottomColor={"#b8b8b8"} _dark={{borderBottomColor:"#fff"}}>
                     <AspectRatio  w="10" ratio={1}>

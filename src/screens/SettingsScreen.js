@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, HStack , color,useColorMode} from "native-base";
+import { Box, HStack , color,useColorMode,AspectRatio,Image,Text} from "native-base";
 import ListItem from "../components/ListItem";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -11,6 +11,17 @@ const SettingsScreen = ({ navigation }) => {
             _dark={{ bg: "blueGray.900" }}
             _light={{ bg: "blueGray.50" }}        
         >
+            {/* <Box  margin={3}>
+                <HStack>
+                    <AspectRatio  w="60" ratio={1}>
+                        <Image
+                            source={{uri:"https://github.com/hueylu910201/book-imges/blob/main/Mask%20group.png?raw=true"}}
+                            alt="notice-img"
+                        />
+                    </AspectRatio>
+                    <Text  fontSize={20} my="auto" paddingLeft={3}>-老呂-</Text>
+                </HStack>
+            </Box> */}
             <Box
                  mt="1" borderBottomWidth={1} borderColor="lightgray"
                  _dark={{ borderColor: 'blueGray.500', borderButtomWidth: 0.6 }}
@@ -20,7 +31,7 @@ const SettingsScreen = ({ navigation }) => {
                         <MaterialCommunityIcons name="account"  color={ colorMode == "light" ? "black" : "white"}  size={26}/>
                     </Box>
                     <Box>
-                        <ListItem title="帳號設定" navigation={navigation} destination="" />
+                        <ListItem title="註冊帳號" navigation={navigation} destination="AccountSetting" />
                     </Box>
                     
                 </HStack>
