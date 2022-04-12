@@ -21,9 +21,9 @@ export default () => {
       <Actionsheet isOpen={isOpen} onClose={onClose}>
         <Actionsheet.Content>
           <Actionsheet.Header>功能選單</Actionsheet.Header>
-          <Actionsheet.Item>回覆評論</Actionsheet.Item>
-          <Actionsheet.Item>新增貼文</Actionsheet.Item>
-          <Actionsheet.Item>我發表過的文章</Actionsheet.Item>
+          <Actionsheet.Item>最新動態</Actionsheet.Item>
+          <Actionsheet.Item>按讚的貼文</Actionsheet.Item>
+          <Actionsheet.Item>喜歡的店家</Actionsheet.Item>
         </Actionsheet.Content>
         <Actionsheet.Footer safeAreaBottom={true}>
           <Actionsheet.Item pl="6" onPress={onClose}>關閉</Actionsheet.Item>

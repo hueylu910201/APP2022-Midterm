@@ -10,6 +10,7 @@ import {LogBox} from 'react-native';
 LogBox.ignoreLogs(['NativeBase:']);
 
 import DrinkScreen from '../screens/DrinkScreen';
+import NewsScreen from '../screens/NewsScreen';
 import DetailScreen from '../screens/DetailScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import NullScreen from '../screens/NullScreen';
@@ -76,13 +77,13 @@ const MyTabs = () => {
         }}
       />
       <Tab.Screen
-        name="comment"
-        component={HomeStack}
+        name="News"
+        component={NewsStack}
         options={{
           headerShown: false,
-          title: "討論區",
+          title: "最新消息",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="comment" color={color} size={26} />
+            <MaterialCommunityIcons name="newspaper-variant-outline" color={color} size={26} />
           ),
         }}
       />
@@ -190,6 +191,38 @@ const SettingsStack = () => {
       />
     </Stack.Navigator>
   );
+}
+
+const NewsStack=()=>{
+  const { colorMode } = useColorMode();
+
+  return (
+    <Stack.Navigator
+    // screenOptions={{
+    //   headerShown: false
+    // }}
+    >
+      <Stack.Screen
+        name="News"
+        component={NewsScreen}
+        options={{
+          title: '最新消息',
+          headerTitle:{
+            
+          },
+          headerStyle: {
+            backgroundColor: colorMode == 'light' ? 'white' : 'black',
+          },
+          headerTitleStyle: {
+            color: colorMode == 'light' ? 'black' : 'white',
+            fontWeight: '400',
+            fontSize: 20
+          }
+        }}
+      />
+    </Stack.Navigator>
+  );
+
 }
 
 const HomeStack = () => {

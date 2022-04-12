@@ -49,7 +49,7 @@ const SettingsScreen = ({ navigation }) => {
                         <MaterialCommunityIcons name="format-letter-case"  color={ colorMode == "light" ? "black" : "white"}  size={26}/>
                     </Box>
                     <Box bg="blue.100">
-                        <ListItem title="字體大小" navigation={navigation} destination="DisplaySetting" />
+                        <ListItem title="字體大小" navigation={navigation}  />
                     </Box>
                     
                 </HStack>
@@ -64,7 +64,7 @@ const SettingsScreen = ({ navigation }) => {
                         <MaterialCommunityIcons name="bell"  color={ colorMode == "light" ? "black" : "white"}  size={26}/>
                     </Box>
                     <Box bg="blue.100">
-                        <ListItem title="通知" navigation={navigation} destination="DisplaySetting" />
+                        <ListItem title="通知" navigation={navigation}  />
                     </Box>
                     
                 </HStack>
@@ -79,7 +79,7 @@ const SettingsScreen = ({ navigation }) => {
                         <MaterialCommunityIcons name="comment-question"  color={ colorMode == "light" ? "black" : "white"}  size={26}/>
                     </Box>
                     <Box bg="blue.100">
-                        <ListItem title="常見問題" navigation={navigation} destination="DisplaySetting" />
+                        <ListItem title="常見問題" navigation={navigation}  />
                     </Box>
                     
                 </HStack>
