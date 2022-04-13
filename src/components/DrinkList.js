@@ -18,7 +18,7 @@ const DrinkList = ({ list, navigation }) => {
       <AspectRatio w="100%" ratio={16 / 9}>
           <Image
             source={{uri:"https://lh3.googleusercontent.com/MFUJhPBYvFTDgoe0UHRq790iD_YAhCCv8B2a7LB4uSv9osoI4FCaro4o374mVElVFZXFmq2hknelo_kwYizmIEYSR-7Z__jc=s600"}}
-            alt='drinkImage'
+            alt='carousel'
           />
         </AspectRatio>
       </Box>
@@ -49,6 +49,7 @@ const DrinkList = ({ list, navigation }) => {
       renderItem={renderItem}
       keyExtractor={item => item.title}
       showsVerticalScrollIndicator={false}
+      key={list}
     />    
   );  
 }

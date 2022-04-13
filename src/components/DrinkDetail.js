@@ -25,12 +25,13 @@ const DrinkDetail = ({ drink, navigation }) => {
           <Image
             margin="1"
             source={{ uri: drink.thumbnail_image }}
-            alt="artist"
+            alt="drink-image"
+            key={drink.thumbnail_image}
           />
         </AspectRatio>
         <VStack paddingLeft={2} >
           <HStack>
-            <Text fontSize={26} fontWeight="700">{drink.title}</Text>
+            <Text fontSize={26} fontWeight="700" key={drink.title}>{drink.title}</Text>
             <TouchableOpacity onPress={() => toggleFunction()} >
                 <Box name={'heart-outline'} color={'red'}>
                   <Text paddingLeft={3} paddingTop="2.5">{toggle ? 
@@ -42,9 +43,9 @@ const DrinkDetail = ({ drink, navigation }) => {
                 </Box>    
               </TouchableOpacity>
           </HStack>
-          <Text fontSize={18}>{drink.address}</Text>
+          <Text fontSize={18} key={drink.address}>{drink.address}</Text>
           <HStack marginTop={2}>
-            <Starrating  value={drink.rate}/>
+            <Starrating  key={drink.rate} value={drink.rate}/>
             <Text paddingLeft="5%" marginTop="-2%" fontSize={15}>{drink.score}</Text>
           </HStack>
           

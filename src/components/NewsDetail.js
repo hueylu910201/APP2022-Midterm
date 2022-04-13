@@ -27,13 +27,14 @@ const NewsDetail = ({ drink, navigation }) => {
             mx="auto"
             paddingRight="6"
             source={{ uri: drink.thumbnail_image }}
-            alt="artist"
+            alt="news-image"
+            key={drink.thumbnail_image2}
           />
         </AspectRatio>
         <VStack  >
           <HStack>
-            <Text fontSize={26} fontWeight="700">{drink.title}</Text>            
-            <Text paddingLeft="5%"  paddingTop="3" fontSize={15}>{drink.date}</Text>
+            <Text fontSize={26} fontWeight="700" key={drink.title2}>{drink.title}</Text>            
+            <Text paddingLeft="5%"  paddingTop="3" fontSize={15} key={drink.date2}>{drink.date}</Text>
           </HStack>
           <Text fontSize={15}>{drink.content}</Text>         
         </VStack>

@@ -21,6 +21,7 @@ const NewsList = ({ list, navigation }) => {
       renderItem={renderItem}
       keyExtractor={item => item.title}
       showsVerticalScrollIndicator={false}
+      key={list}
     />    
   );  
 }

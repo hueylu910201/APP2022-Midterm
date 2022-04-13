@@ -78,7 +78,7 @@ const MyTabs = () => {
         }}
       />
       <Tab.Screen
-        name="News"
+        name="NewsStack"
         component={NewsStack}
         options={{
           headerShown: false,

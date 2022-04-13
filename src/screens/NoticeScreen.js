@@ -20,7 +20,7 @@ const NoticeScreen=({ drink, navigation })=>{
                         
                 </HStack>
            </Pressable>
-            <Pressable onPress={() => navigation.navigate('News', drink)}>
+            <Pressable onPress={() => navigation.navigate('NewsStack', drink)}>
                 <HStack padding={5}  borderBottomWidth={1}borderBottomColor={"#b8b8b8"} _dark={{borderBottomColor:"#fff"}}>
                     <AspectRatio  w="10" ratio={1}>
                         <Image
@@ -34,7 +34,7 @@ const NoticeScreen=({ drink, navigation })=>{
                 </HStack>    
             </Pressable>
 
-            <Pressable onPress={() => navigation.navigate('News', drink)}>
+            <Pressable onPress={() => navigation.navigate('NewsStack', drink)}>
                 <HStack padding={5}  borderBottomWidth={1}borderBottomColor={"#b8b8b8"} _dark={{borderBottomColor:"#fff"}}>
                     <Text paddingTop={3} marginRight={2}> <MaterialCommunityIcons name="notification-clear-all" size={35}/></Text>
                     
