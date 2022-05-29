@@ -9,13 +9,6 @@ const NewsList = ({ list, navigation }) => {
     <FlatList
     _dark={{ bg: "blueGray.900" }}
     _light={{ bg: "white" }}
-    ListHeaderComponent={
-      <>
-      <Box margin={"3"} ratio={16 / 9}>
-        <SearchBar/>
-      </Box>
-      </>
-    }  
       scrollIndicator="false"
       data={list}
       renderItem={renderItem}

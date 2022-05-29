@@ -3,7 +3,7 @@ import { Box, HStack, VStack, AspectRatio, Text, Image, Pressable , useColorMode
 import  Starrating from "./Starrating";
 import {TouchableOpacity} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import Slider from "./Slider";
 const DrinkDetail = ({ drink, navigation }) => {
 
   const [toggle, setToggle] = useState(true);
@@ -12,8 +12,10 @@ const DrinkDetail = ({ drink, navigation }) => {
     };
     const { colorMode } = useColorMode();
   return (
+
+    
     <Box padding={3} 
-      borderWidth={2} borderRightRadius={5} borderColor="#dcebfa"
+      borderWidth={6} borderRightRadius={5} borderColor="#BCDCFF" borderLeftWidth={0} borderTopWidth={0}
       marginX={1} marginBottom={2} borderRadius={10} shadow={2}
       _dark={{ borderColor: 'blueGray.500', borderWidth: 0.6 }}
       _light={{ bg: "#eff6fd" }}>
@@ -32,7 +34,7 @@ const DrinkDetail = ({ drink, navigation }) => {
         <VStack paddingLeft={2} >
           <HStack>
             <Text fontSize={26} fontWeight="700" key={drink.title}>{drink.title}</Text>
-            <TouchableOpacity onPress={() => toggleFunction()} >
+            {/* <TouchableOpacity onPress={() => toggleFunction()} >
                 <Box name={'heart-outline'} color={'red'}>
                   <Text paddingLeft={3} paddingTop="2.5">{toggle ? 
              
@@ -41,7 +43,7 @@ const DrinkDetail = ({ drink, navigation }) => {
                   
                    </Text>
                 </Box>    
-              </TouchableOpacity>
+              </TouchableOpacity> */}
           </HStack>
           <Text fontSize={18} key={drink.address}>{drink.address}</Text>
           <HStack marginTop={2}>
