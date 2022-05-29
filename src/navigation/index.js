@@ -20,7 +20,7 @@ import NoticeScreen from '../screens/NoticeScreen';
 import GeneralAccountScreen from '../screens/GeneralAccountScreen';
 import MyTheme from '../Theme';
 import DrinkList from '../components/DrinkList';
-import SearchBar from '../components/SearchBar';
+import NewsSegment from '../screens/NewsSegment';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -246,7 +246,7 @@ const NewsStack=()=>{
     >
       <Stack.Screen
         name="News"
-        component={NewsScreen}
+        component={NewsSegment}
         options={{
           title: '最新消息',
           headerTitle:{

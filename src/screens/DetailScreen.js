@@ -5,7 +5,7 @@ import { Center, ScrollView, Box, AspectRatio, Text, Heading, Image, Button, VSt
 import Starrating_detail from "../components/Starrating_detail";
 import Starrating from '../components/Starrating';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import FadeInView from '../Theme/FadeAnim';
 const DetailScreen = ({ route , drink }) => {
   const { 
     title, 
@@ -26,7 +26,7 @@ const DetailScreen = ({ route , drink }) => {
       flex={1} _dark={{ bg: "blueGray.900" }}
       _light={{ bg: "#E2F0FF" }}
     >
-      <ScrollView >
+      <ScrollView ><FadeInView>
         <AspectRatio w="100%" ratio={16 / 9}>
           <Image
             source={{uri: image }}
@@ -81,7 +81,7 @@ const DetailScreen = ({ route , drink }) => {
             source={{uri:menu}}
             alt='menu'
           />
-        </AspectRatio>      
+        </AspectRatio></FadeInView>      
       </ScrollView>
     
     </Center>

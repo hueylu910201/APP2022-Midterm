@@ -5,7 +5,7 @@ import newsData from "../json/news.json";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FadeInView from "../Theme/FadeAnim";
 
-const NewsScreen = ({ navigation }) => {
+const NewsScreen2 = ({ navigation }) => {
   const [value, setValue] = useState()
   function updateSearch(value) {
       //do your search logic or anything
@@ -14,7 +14,8 @@ const NewsScreen = ({ navigation }) => {
   return (
 
     <Box>
-      <FadeInView>
+        <FadeInView>
+        <Text>第二頁</Text>
       <NewsList 
         list={newsData.drinkList}
         renderItem={renderItem}
@@ -26,4 +27,4 @@ const NewsScreen = ({ navigation }) => {
   );
 };
 
-export default NewsScreen;
+export default NewsScreen2;
