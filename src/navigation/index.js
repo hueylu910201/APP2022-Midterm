@@ -21,6 +21,7 @@ import GeneralAccountScreen from '../screens/GeneralAccountScreen';
 import MyTheme from '../Theme';
 import DrinkList from '../components/DrinkList';
 import NewsSegment from '../screens/NewsSegment';
+import MapScreen from '../screens/MapScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -34,6 +35,35 @@ const Tab = createBottomTabNavigator();
 // // extend the theme
 // export const theme = extendTheme({ config });
 
+const config = {
+  animation: 'spring',
+  config: {
+    stiffness: 1000,
+    damping: 500,
+    mass: 3,
+    overshootClamping: true,
+    restDisplacementThreshold: 0.01,
+    restSpeedThreshold: 0.01,
+  },
+};
+
+const verticalAnimation = {
+  gestureDirection: 'vertical',
+  cardStyleInterpolator: ({ current, layouts }) => {
+    return {
+      cardStyle: {
+        transform: [
+          {
+            translateY: current.progress.interpolate({
+              inputRange: [0, 1],
+              outputRange: [layouts.screen.height, 0],
+            }),
+          },
+        ],
+      },
+    };
+  },
+};
 const Navigation = () => {
   const { colorMode } = useColorMode();
   return (
@@ -51,6 +81,8 @@ const Navigation = () => {
     </NavigationContainer>
   );
 }
+
+
 
 const MyTabs = () => {
   const { colors } = useTheme();
@@ -89,9 +121,14 @@ const MyTabs = () => {
         }}
       />
       <Tab.Screen
-        name=" "
-        component={NullScreen}
+        name="map"
+        component={MapScreen}
         options={{
+          headerShown: false,
+          title: "地圖",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="map-marker-radius" color={color} size={26} />
+          ),
         }}
       />
        <Tab.Screen
@@ -105,13 +142,13 @@ const MyTabs = () => {
           ),
         }}
       />
-       <Tab.Screen
+       {/* <Tab.Screen
         name="ActionButton"
         component={NullScreen}
         options={{
           tabBarButton: () => <ActionButton />
         }}
-      />
+      /> */}
       <Tab.Screen
         name="SettingsStack"
         component={SettingsStack}
@@ -133,6 +170,17 @@ const MyTabs = () => {
 
 const NoticeStack=()=>{
   const { colorMode } = useColorMode();
+  const config = {
+    animation: 'spring',
+    config: {
+      stiffness: 1000,
+      damping: 500,
+      mass: 3,
+      overshootClamping: true,
+      restDisplacementThreshold: 0.01,
+      restSpeedThreshold: 0.01,
+    },
+  };
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -147,6 +195,10 @@ const NoticeStack=()=>{
             color: colorMode == 'light' ? 'black' : 'white',
             fontWeight: '400',
             fontSize: 20
+          },
+          transitionSpec: {
+            open: config,
+            close: config,
           },
         }}
       />
@@ -242,7 +294,6 @@ const NewsStack=()=>{
     <Stack.Navigator
     // screenOptions={{
     //   headerShown: false
-    // }}
     >
       <Stack.Screen
         name="News"
@@ -276,6 +327,7 @@ const HomeStack = () => {
     // screenOptions={{
     //   headerShown: false
     // }}
+    screenOptions={verticalAnimation}
     >
       <Stack.Screen
         name="Home"
