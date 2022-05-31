@@ -2,7 +2,7 @@ import React from 'react';
 import {
    Box, VStack,
    Center,
-   Text, Pressable,
+   Text, Pressable, HStack,AspectRatio,Image,useColorMode
 } from 'native-base';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -11,10 +11,11 @@ const ActionScreen = ({ onClose, site }) => {
         id,
         name,
         address,
-        latitude,
-        longtitude,
+        tel,
+        time,
+        image,
    } = site;
-
+   const { colorMode } = useColorMode();
 //    const getTime = (m) => {
 //       const mday = String(m);
 //       const year = mday.slice(0, 4);
@@ -28,17 +29,32 @@ const ActionScreen = ({ onClose, site }) => {
 //    }
    return (
 
-      <VStack h="50%" w="100%" bg="blueGray.50" borderRadius={20} >
+      <VStack h="50%" w="100%" bg={colorMode=="light"?"blueGray.50":"black"} borderRadius={20} >
          <Pressable onPress={onClose} position="absolute" top={2} right={3}>
             <MaterialCommunityIcons name="close" color="gray" size={30} />
          </Pressable>
-         <Box borderBottomColor={"white"} w={"15%"} h={1} borderRadius={3} bg="gray" mt={3} alignSelf="center"></Box>
-         <Text fontSize="lg" my={6} textAlign="center">{name}{" "}站</Text>
-         <Box px={6} >
-            <Text><Text fontWeight={'bold'}>地址：</Text>{address}</Text>
-            <Text mt={2}><Text fontWeight={'bold'}>經度/緯度：</Text>{Number(longtitude).toFixed(2)}/{Number(latitude).toFixed(2)}</Text>
-            {/* <Text mt={2}><Text fontWeight={'bold'}>更新時間：</Text>{getTime(line)}</Text> */}
-         </Box>
+         <Box borderColor={"gray"} w={"15%"} h={1} borderRadius={3} bg="gray" mt={3} alignSelf="center"></Box>
+         <Text fontSize="lg" my={6} textAlign="center">{name}</Text>
+         <VStack>
+            <Box px={6} alignItems="flex-start">
+               <Text><Text fontWeight={'bold'}>地址：</Text>{address}</Text>
+            </Box>
+            <HStack px={6} alignItems="flex-start">
+               <Text><Text fontWeight={'bold'}>電話：</Text>{tel}</Text>
+            </HStack>
+            <HStack px={6} alignItems="flex-start">
+               <Text><Text fontWeight={'bold'}>營業時間：</Text>{time}</Text>
+            </HStack>
+         </VStack>
+         <HStack alignItems="center" paddingLeft={5} paddingTop={3} paddingBottom={3}>
+            <AspectRatio w="95%" ratio={16 / 9}>
+               <Image
+                  source={{uri: image }}
+                  alt='drinkImage'
+               />
+            </AspectRatio>
+         </HStack>
+         
 
       </VStack>
    );

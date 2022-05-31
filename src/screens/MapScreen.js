@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import { Platform } from "react-native";
-import { Box, Center } from 'native-base';
+import { Box, Center ,useColorMode} from 'native-base';
 import * as Location from 'expo-location';
 import * as Device from "expo-device";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import metroJson from "../json/map.json";
 import ActionButton from '../components/ActionButton';
-import mapStyle from "../Theme/mapSstyle.json"
+import mapStyle from "../Theme/mapSstyle.json";
+import BlackMapStyle from "../Theme/BlackMapStyle.json";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function MapScreen() {
@@ -18,17 +19,18 @@ export default function MapScreen() {
    const [metro2, setMetro2] = useState(metroJson);
    const [ubike, setUbike] = useState([]);
    const [zoomRatio, setZoomRatio] = useState(1);
+   const { colorMode } = useColorMode();
 
    const [region, setRegion] = useState({
-      longitude: 121.544626,
-      latitude: 25.024750, 
-      longitudeDelta: 0.02,
-      latitudeDelta: 0.04,
+      longitude: 121.544648,
+      latitude: 25.024896,
+      longitudeDelta: 0.001,
+      latitudeDelta: 0.004,
    })
    const [marker, setMarker] = useState({
       coord: {
-         longitude: 121.544637,
-         latitude: 25.024624,
+         longitude: 121.54356967149931,
+         latitude: 25.023934194083125, 
       },
       
    });
@@ -66,15 +68,6 @@ export default function MapScreen() {
       setOnCurrentLocation(true);
    }
 
-   const getUbikeData = async () => {
-      const ubikeData = await getUbikeInfo();
-      setUbike(ubikeData);
-   };
-
-   useEffect(() => {
-      getUbikeData();
-   }, []);
-
    return (
       <Box flex={1}>
          <MapView
@@ -82,7 +75,7 @@ export default function MapScreen() {
             style={{ flex: 1 }}
             showsTraffic
             onRegionChangeComplete={onRegionChangeComplete}
-            customMapStyle={mapStyle}
+            customMapStyle={colorMode=="light"?mapStyle:BlackMapStyle}
          >
             {/* {(zoomRatio > 0.14) && metro.map((site) => (
                <Marker
@@ -96,7 +89,7 @@ export default function MapScreen() {
                   </Center>
                </Marker>
             ))} */}
-            {(zoomRatio > 0.14) && metro.map((site) => (
+            {(zoomRatio > 0.004) && metro.map((site) => (
                <ActionButton zoomRatio={zoomRatio} site={site} key={site.id}/>
             ))}
          </MapView>

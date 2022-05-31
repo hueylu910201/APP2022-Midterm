@@ -1,10 +1,90 @@
 [   {
-    "id": "012",
-    "id2":"013",
-    "name": "科技大樓",
-    "line": "文山內湖線",
-    "address": "106台灣台北市大安區捷運科技大樓站",
-    "latitude": 25.026124,
-    "longitude": 121.543437
+        "id": "01",
+        "id2":"1",
+        "name": "米堤銀行",
+        "address": "106台北市大安區復興南路二段327號",
+        "tel":"(02)2738-9238",
+        "time":"上午10:00 - 下午21:00",
+        "image": "https://live.staticflickr.com/65535/49781156282_e84337ff36_b.jpg",
+        "latitude": 25.023934194083125, 
+        "longitude":121.54356967149931
+    },
+    {
+        "id": "02",
+        "id2":"2",
+        "name": "KEBUKE",
+        "line": "文山內湖線",
+        "address": "106台北市大安區和平東路二段307號",
+        "image": "https://github.com/hueylu910201/book-imges/blob/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202022-04-10%20140324.png?raw=true",
+        "time":"上午10:00 - 下午21:00",
+        "tel":"(02)2709-8989",
+        "latitude": 25.025193281735135,
+        "longitude":121.54503758413787
+    },
+    {
+        "id": "03",
+        "id2":"3",
+        "name": "五桐號",
+        "address": "106台北市大安區和平東路二段273號",
+        "image": "https://www.chickpt.com.tw/compassion_img?img=%2Fphotos%2F20220301%2F1727014%2F1646146380.0422347428521.jpg",
+        "time":"上午10:00 - 下午21:00",
+        "tel":"(02)2709-8989",
+        "latitude": 25.02503735518996,
+        "longitude": 121.54422105078463
+    },
+    {
+        "id": "04",
+        "id2":"4",
+        "name": "CoCo都可",
+        "address": "106台北市大安區和平東路二段305號",
+        "image": "https://achingfoodie.tw/wp-content/uploads/20210110090825_21.jpg",
+        "time":"上午10:30 - 下午20:45",
+        "tel":"(02)2705-4832",
+        "latitude": 25.024979007257173,
+        "longitude":  121.54494189987302
+    },
+    {
+        "id": "05",
+        "id2":"5",
+        "name": "屋弄原生茶飲",
+        "address": "106台北市大安區和平東路二段269號",
+        "image": "https://i0.wp.com/www.saydigi.com/wp-content/uploads/2019/05/45e4e6b39d912c4c279485ea75816098.jpg",
+        "time":"上午11:00 - 下午21:00",
+        "tel":"(02)2707-0707",
+        "latitude": 25.024979007257173,
+        "longitude": 121.54411041503529
+    },
+    {
+        "id": "06",
+        "id2":"6",
+        "name": "喜庄茶鋪",
+        "address": "106台北市大安區和平東路二段311巷7號",
+        "image": "https://scontent-tpe1-1.xx.fbcdn.net/v/t31.18172-8/10583025_548108785349544_4047359726645229135_o.jpg?_nc_cat=107&ccb=1-7&_nc_sid=e3f864&_nc_ohc=D5Edpm2WjPQAX9Db4K3&_nc_ht=scontent-tpe1-1.xx&oh=00_AT90Jajo7-kNKhHZWyBU_LTu7sIQLB5QeRjf6eYUHdooKQ&oe=62BC2B3B",
+        "time":"上午11:00 - 下午23:00",
+        "tel":"(02)2700-2701",
+        "latitude": 25.025146507190804,
+        "longitude": 121.54520269987297
+    },
+    {
+        "id": "07",
+        "id2":"7",
+        "name": "春山茶水鋪",
+        "address": "106台北市大安區復興南路二段323號",
+        "image": "https://omofood.com/wp-content/uploads/pixnet/36ee9bad63b18539208769808fffc060.jpg",
+        "time":"上午08:00 - 下午16:00",
+        "tel":"(02)2737-0198",
+        "latitude": 25.02409181853253,
+        "longitude":  121.54352438228146
+    },
+    {
+        "id": "08",
+        "id2":"8",
+        "name": "山培SUNBAY",
+        "address": "10670台北市大安區和平東路二段363號",
+        "image": "https://images.squarespace-cdn.com/content/v1/54ffecc4e4b0a53decce460b/1570419294468-XBDDBO5TAB0IZYDT6XEZ/IMG_9110.jpg",
+        "time":"上午10:30 - 下午21:00",
+        "tel":"(02)2709-0363",
+        "latitude": 25.025005938747448,
+        "longitude":   121.5463884822815
     }
  ]
