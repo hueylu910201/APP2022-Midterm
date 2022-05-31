@@ -122,7 +122,7 @@ const MyTabs = () => {
       />
       <Tab.Screen
         name="map"
-        component={MapScreen}
+        component={MapStack}
         options={{
           headerShown: false,
           title: "地圖",
@@ -165,6 +165,30 @@ const MyTabs = () => {
         }}
       />
     </Tab.Navigator>
+  );
+}
+
+const MapStack=()=>{
+  const { colorMode } = useColorMode();
+
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="地圖"
+        component={MapScreen}
+        options={{
+          title: "地圖",
+          headerStyle: {
+            backgroundColor: colorMode == 'light' ? 'white' : 'black',
+          },
+          headerTitleStyle: {
+            color: colorMode == 'light' ? 'black' : 'white',
+            fontWeight: '400',
+            fontSize: 20
+          },
+        }}
+      />
+    </Stack.Navigator>
   );
 }
 
