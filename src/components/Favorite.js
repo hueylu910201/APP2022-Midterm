@@ -1,13 +1,13 @@
 import React ,{useState}from "react";
 import { Box, HStack, VStack, AspectRatio, Text, Image, Pressable , useColorMode} from "native-base"
-import  Starrating from "./Starrating";
+import  Starrating from "../components/Starrating";
 import {TouchableOpacity} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Store} from "../redux/store/index";
 import { useDispatch } from "react-redux";
-import { addFavoriteDrink,removeFavoriteDrink } from "../redux/actions/action";
+import { removeFavoriteDrink } from "../redux/actions/action";
 
-const DrinkDetail = ({ drink, navigation }) => {
+const FavoriteDetail = ({ drink, navigation }) => {
 
   const [toggle, setToggle] = useState(true);
     const toggleFunction = () => {
@@ -16,33 +16,26 @@ const DrinkDetail = ({ drink, navigation }) => {
     const { colorMode } = useColorMode();
 
     const {
-      title,
-      id,
-      address,
-      thumbnail_image,
-      score,
-      rate,
-      url,
-      urlIG,
-      urlWEB,
-      image,
-      time,
-      tel,
-      menu,
-
+        title,
+        id,
+        address,
+        thumbnail_image,
+        score,
+        rate,
+        url,
+        urlIG,
+        urlWEB,
+        image,
+        time,
+        tel,
+        menu,
     }=drink;
     const dispatch=useDispatch();
-    const [isFav,setIsFav]=useState(false);
-    const toggleFav=()=>{
-      if(isFav==false){
-        setIsFav(true)
-        dispatch(addFavoriteDrink({title,id,address,thumbnail_image,score,rate,url,urlIG,urlWEB,image,time,tel,menu}));
-      }
-      else{
+    const [isFav,setIsFav]=useState(true);
+    const removeFav=()=>{
         setIsFav(false)
         dispatch(removeFavoriteDrink(id));
-      }
-    };
+    }
   return (
 
     <HStack padding={3} 
@@ -64,22 +57,24 @@ const DrinkDetail = ({ drink, navigation }) => {
         </AspectRatio>
         <VStack paddingLeft={2} >
           <HStack>
-            <Text fontSize={26} fontWeight="700" key={drink.title}>{drink.title}</Text>
-            <Pressable onPress={toggleFav} >
+            <Text fontSize={26} fontWeight="700" key={drink.title}>{title}</Text>
+            <Pressable onPress={removeFav} >
                 <Box name={'heart-outline'} color={'red'}>
-                  <Text paddingLeft={3} paddingTop="2.5">{isFav==false ? 
+                  <Text paddingLeft={3} paddingTop="2.5">
+                    {isFav==false ? 
 
-                    <MaterialCommunityIcons name={'heart-outline'} color={colorMode == "light" ? "black" : "white"}  size={25} />
-                    :<MaterialCommunityIcons name={'heart'} color={'#ff5e5e'} size={25} />}
+                        <MaterialCommunityIcons name={'heart-outline'} color={colorMode == "light" ? "black" : "white"}  size={25} />
+                        :<MaterialCommunityIcons name={'heart'} color={'#ff5e5e'} size={25} />
+                    }
                   
                    </Text>
                 </Box>    
               </Pressable>
           </HStack>
-          <Text fontSize={18} key={drink.address}>{drink.address}</Text>
+          <Text fontSize={18} key={drink.address}>{address}</Text>
           <HStack marginTop={2}>
-            <Starrating  key={drink.rate} value={drink.rate}/>
-            <Text paddingLeft="5%" marginTop="-2%" fontSize={15}>{drink.score}</Text>
+            <Starrating  key={drink.rate} value={rate}/>
+            <Text paddingLeft="5%" marginTop="-2%" fontSize={15}>{score}</Text>
           </HStack>
           
 
@@ -89,4 +84,4 @@ const DrinkDetail = ({ drink, navigation }) => {
     </HStack>
   )};
 
-export default DrinkDetail;
+export default FavoriteDetail;

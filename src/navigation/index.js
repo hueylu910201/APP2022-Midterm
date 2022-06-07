@@ -16,8 +16,8 @@ import SettingsScreen from '../screens/SettingsScreen';
 import NullScreen from '../screens/NullScreen';
 import ActionButton from '../components/ActionButton';
 import DisplaySettingScreen from '../screens/DisplaySettingScreen';
-import NoticeScreen from '../screens/NoticeScreen';
-import GeneralAccountScreen from '../screens/GeneralAccountScreen';
+import FavoriteScreen from '../screens/FavoriteScreen';
+// import GeneralAccountScreen from '../screens/GeneralAccountScreen';
 import MyTheme from '../Theme';
 import DrinkList from '../components/DrinkList';
 import NewsSegment from '../screens/NewsSegment';
@@ -103,7 +103,7 @@ const MyTabs = () => {
         component={HomeStack}
         options={{
           headerShown: false,
-          title: "主頁",
+          title: "首頁",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" color={color} size={26} />
           ),
@@ -132,13 +132,13 @@ const MyTabs = () => {
         }}
       />
        <Tab.Screen
-        name="notice"
-        component={NoticeStack}
+        name="FavoriteStack"
+        component={FavoriteStack}
         options={{
           headerShown: false,
-          title: "通知",
+          title: "珍藏店家",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={26} />
+            <MaterialCommunityIcons name="heart" color={color} size={26} />
           ),
         }}
       />
@@ -192,7 +192,7 @@ const MapStack=()=>{
   );
 }
 
-const NoticeStack=()=>{
+const FavoriteStack=()=>{
   const { colorMode } = useColorMode();
   const config = {
     animation: 'spring',
@@ -208,10 +208,10 @@ const NoticeStack=()=>{
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Notice"
-        component={NoticeScreen}
+        name="Favorite"
+        component={FavoriteScreen}
         options={{
-          title: "通知",
+          title: "珍藏店家",
           headerStyle: {
             backgroundColor: colorMode == 'light' ? 'white' : 'black',
           },
@@ -279,7 +279,7 @@ const SettingsStack = () => {
         })}
       />
 
-      <Stack.Screen
+      {/* <Stack.Screen
         name="AccountSetting"
         component={GeneralAccountScreen}
         options={({navigation}) => ({
@@ -306,7 +306,7 @@ const SettingsStack = () => {
             />
           )
         })}
-      />
+      /> */}
     </Stack.Navigator>
   );
 }

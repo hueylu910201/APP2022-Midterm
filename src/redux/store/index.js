@@ -1,15 +1,23 @@
 import { createStore, compose, applyMiddleware, combineReducers } from "redux";
 import thunk from "redux-thunk";
-import { accountReducer } from "./accountReducer";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { persistStore,persistReducer } from "redux-persist";
+import {addFavReducer} from '../actions/reducer';
 
 const initialState = { };
 const reducer = combineReducers({
-  account: accountReducer,
+  favDrink: addFavReducer,
 });
 
-const store = createStore(
+const persistConfig={
+  key:'root',
+  storage:AsyncStorage,
+};
+
+
+const Store = createStore(
   reducer,
-  applyMiddleware(thunk)
+  applyMiddleware(thunk),
 );
 
-export default store;
+export default Store;

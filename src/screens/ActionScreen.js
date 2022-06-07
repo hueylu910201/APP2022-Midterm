@@ -34,8 +34,8 @@ const ActionScreen = ({ onClose, site }) => {
             <MaterialCommunityIcons name="close" color="gray" size={30} />
          </Pressable>
          <Box borderColor={"gray"} w={"15%"} h={1} borderRadius={3} bg="gray" mt={3} alignSelf="center"></Box>
-         <Text fontSize="lg" my={6} textAlign="center">{name}</Text>
-         <VStack>
+         <Text fontSize={24} my={6} textAlign="center" fontWeight={"bold"}>{name}</Text>
+         <VStack paddingLeft={5} bottom={2}>
             <Box px={6} alignItems="flex-start">
                <Text><Text fontWeight={'bold'}>地址：</Text>{address}</Text>
             </Box>
@@ -46,11 +46,12 @@ const ActionScreen = ({ onClose, site }) => {
                <Text><Text fontWeight={'bold'}>營業時間：</Text>{time}</Text>
             </HStack>
          </VStack>
-         <HStack alignItems="center" paddingLeft={5} paddingTop={3} paddingBottom={3}>
-            <AspectRatio w="95%" ratio={16 / 9}>
+         <HStack alignItems="center" paddingLeft={10} paddingTop={3} >
+            <AspectRatio w="90%" ratio={16 / 9} bottom={2}>
                <Image
                   source={{uri: image }}
                   alt='drinkImage'
+                  borderRadius={10}
                />
             </AspectRatio>
          </HStack>

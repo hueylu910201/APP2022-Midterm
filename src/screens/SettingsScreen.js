@@ -1,10 +1,20 @@
-import React from "react";
-import { Box, HStack , color,useColorMode,AspectRatio,Image,Text} from "native-base";
+import React ,{useState}from "react";
+import { Box, HStack , color,useColorMode,AspectRatio,Image,Text,Switch,Button} from "native-base";
 import ListItem from "../components/ListItem";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Pressable } from "react-native";
 
 const SettingsScreen = ({ navigation }) => {
-    const { colorMode } = useColorMode();
+    const { colorMode, toggleColorMode } = useColorMode();
+    // const {FontSize,setFontSize}=useState(16);
+    // const letChangeTextSize = () => {
+ 
+    //     if (FontSize == 16) {
+    //       setFontSize(FontSize===32);
+    //     } else {
+    //       setFontSize(FontSize===16);
+    //     }
+    //   }
     return (
         <Box 
             flex={1}
@@ -22,7 +32,7 @@ const SettingsScreen = ({ navigation }) => {
                     <Text  fontSize={20} my="auto" paddingLeft={3}>-老呂-</Text>
                 </HStack>
             </Box> */}
-            <Box
+            {/* <Box
                  mt="1" borderBottomWidth={1} borderColor="lightgray"
                  _dark={{ borderColor: 'blueGray.500', borderButtomWidth: 0.6 }}
             >
@@ -35,7 +45,7 @@ const SettingsScreen = ({ navigation }) => {
                     </Box>
                     
                 </HStack>
-            </Box>            
+            </Box>             */}
             <Box 
                 mt="1" borderBottomWidth={1} borderColor="lightgray"
                 _dark={{ borderColor: 'blueGray.500', borderButtomWidth: 0.6 }}
@@ -44,13 +54,22 @@ const SettingsScreen = ({ navigation }) => {
                     <Box marginTop={4} marginLeft={3}>
                         <MaterialCommunityIcons name="white-balance-sunny"  color={ colorMode == "light" ? "black" : "white"}  size={26}/>
                     </Box>
-                    <Box bg="blue.100">
-                        <ListItem title="深色模式" navigation={navigation} destination="DisplaySetting" />
-                    </Box>
+                    <HStack space={20} alignItems="center" >
+                    <ListItem title="深色模式"/>
+                    <Switch
+                        right={-85}
+                        name="light Mode"
+                        isChecked={colorMode === "dark"}
+                        onToggle={toggleColorMode}
+                        accessibilityLabel="display-mode"
+                        accessibilityHint="light or dark mode"
+                    />
+                </HStack>
                     
                 </HStack>
                
             </Box>
+
             <Box 
                 mt="1" borderBottomWidth={1} borderColor="lightgray"
                 _dark={{ borderColor: 'blueGray.500', borderButtomWidth: 0.6 }}
@@ -62,10 +81,10 @@ const SettingsScreen = ({ navigation }) => {
                     <Box bg="blue.100">
                         <ListItem title="字體大小" navigation={navigation}  />
                     </Box>
-                    
                 </HStack>
                
             </Box>
+
             <Box 
                 mt="1" borderBottomWidth={1} borderColor="lightgray"
                 _dark={{ borderColor: 'blueGray.500', borderButtomWidth: 0.6 }}

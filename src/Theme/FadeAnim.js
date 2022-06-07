@@ -4,13 +4,17 @@ import React,{useEffect, useRef} from "react";
 
 const FadeInView=(props)=>{
     const fadeAnim = useRef(new Animated.Value(0)).current;
-    useEffect(()=>{
+    useEffect(()=>{ 
+    Animated.sequence([
     Animated.timing(fadeAnim,{
         toValue:1,
         duration:1200,
         useNativeDriver:true,
-        }).start();
-    },[]);
+        }),
+        
+    ]).start();
+
+    })
     return(
         <Animated.View
             style={{

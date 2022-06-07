@@ -1,8 +1,9 @@
-import React from "react";
+import React ,{useState}from "react";
 import { Text, HStack, Pressable } from "native-base";
 import AntDesign from "react-native-vector-icons/AntDesign";
 
 const ListItem = ({ title, navigation, destination }) => {
+  const {FontSize,setFontSize}=useState(16);
   return (
     <Pressable
       onPress={() => {

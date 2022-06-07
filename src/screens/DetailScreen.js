@@ -36,7 +36,7 @@ const DetailScreen = ({ route , drink }) => {
         <Box shadow={1} borderRadius={10} _dark={{ bg: "#252a2e", borderColor: 'blueGray.500', borderWidth: 0.6 }}
         _light={{ bg: "blueGray.50" }} padding="2" margin="2">
           <Center _light={{  bg:"#f2f2f2" }}>
-            <Heading paddingLeft={75}  paddingRight={75}pt={1} fontSize="3xl" color='#6099E4' alignSelf={"center"} _light={{  bg:"#FFF" }} borderRadius={10}>{title}</Heading>
+            <Text paddingLeft={75}  paddingRight={75} fontSize="30" fontWeight={"bold"} color='#6099E4' alignSelf={"center"} _light={{  bg:"#FFF" }} borderRadius={10}>{title}</Text>
             <Box marginTop={"1%"}alignSelf={"center"}>
               <Starrating value={rate} />
             </Box>

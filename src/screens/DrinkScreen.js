@@ -18,6 +18,7 @@ const DrinkScreen = ({ navigation }) => {
         renderItem={renderItem}
         navigation={navigation}
         keyExtractor={item => item.title}
+        key={drinkData.drinkList}
       />
     </Box>
   );
