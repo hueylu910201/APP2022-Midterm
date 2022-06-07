@@ -114,7 +114,7 @@ const MyTabs = () => {
         component={NewsStack}
         options={{
           headerShown: false,
-          title: "最新消息",
+          title: "動態消息",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="newspaper-variant-outline" color={color} size={26} />
           ),
@@ -323,7 +323,7 @@ const NewsStack=()=>{
         name="News"
         component={NewsSegment}
         options={{
-          title: '最新消息',
+          title: '動態消息',
           headerTitle:{
             
           },
