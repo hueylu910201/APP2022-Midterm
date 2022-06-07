@@ -1,6 +1,5 @@
 import React ,{useState}from "react";
-import { Box, HStack, VStack, AspectRatio, Text, Image, Pressable , useColorMode} from "native-base";
-import AntDesign from "react-native-vector-icons/AntDesign";
+import { Box, HStack, VStack, AspectRatio, Text, Image, Pressable , useColorMode,Center} from "native-base";
 import { FlatList } from "react-native";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FavoriteDetail from "../components/Favorite";
@@ -48,13 +47,19 @@ const FavoriteScreen=({ navigation })=>{
     //                     <Text paddingTop={3} fontSize={12}>2週前</Text>
     //             </HStack>      
     //       </Pressable>
-    //    </VStack>    
-        <FlatList
-            data={drink}
-            renderItem={renderItem}
-            keyExtractor={item => item.id}
-        />
-        
+    //    </VStack> 
+        <VStack _dark={{bg:"blueGray.900"}} flex={1}>
+            <Center  marginTop={5} >
+                <Box _dark={{ backgroundColor:"black",borderColor:'gray.700'}} backgroundColor="#eff6fd" borderWidth={7} borderColor="#BCDCFF" borderLeftWidth={0} borderTopWidth={0} padding={3} paddingLeft={8} paddingRight={8} borderRadius={10}>
+                <Text fontSize={28} fontWeight={'bold'}>已珍藏的店家</Text>
+           </Box>
+            </Center>   
+            <FlatList
+                data={drink}
+                renderItem={renderItem}
+                keyExtractor={item => item.id}
+            />
+        </VStack>
      );
 }
 export default FavoriteScreen;

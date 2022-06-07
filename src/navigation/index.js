@@ -177,7 +177,7 @@ const MapStack=()=>{
         name="地圖"
         component={MapScreen}
         options={{
-          title: "地圖",
+          title: "飲料店分布",
           headerStyle: {
             backgroundColor: colorMode == 'light' ? 'white' : 'black',
           },

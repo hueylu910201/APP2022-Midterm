@@ -76,7 +76,7 @@ const DetailScreen = ({ route , drink }) => {
                 _light={{ bg: "#fff" }}>
           <Text fontSize={22} fontWeight={"900"}>菜單</Text>
         </HStack>  
-        <AspectRatio w="100%" ratio={12 / 9} marginBottom={8}>
+        <AspectRatio w="100%" ratio={16 / 9} marginBottom={8}>
           <Image
             source={{uri:menu}}
             alt='menu'

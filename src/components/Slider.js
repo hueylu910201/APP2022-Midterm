@@ -12,7 +12,9 @@ const height = width*0.6;
 const image=[
   'https://github.com/hueylu910201/book-imges/blob/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202022-04-12%20120240.png?raw=true',
   'https://github.com/hueylu910201/book-imges/blob/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202022-04-12%20144336.png?raw=true',
-  'https://github.com/hueylu910201/book-imges/blob/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202022-04-12%20115110.png?raw=true'
+  'https://github.com/hueylu910201/book-imges/blob/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202022-04-12%20115110.png?raw=true',
+  'https://cc.tvbs.com.tw/img/program/upload/2021/07/26/20210726102106-eadbedc5.jpg',
+  'https://cc.tvbs.com.tw/img/program/upload/2021/01/11/20210111151604-cf94e111.jpg'
 ]
 
 export default class Slider extends React.Component{
@@ -70,6 +72,6 @@ const style = StyleSheet.create({
   scroll:{height,width},
   image:{width,height,resizeMode:'cover'},
   pagination:{flexDirection:'row',position:'absolute',bottom:0,alignSelf:'center'},
-  pagingText:{color:'#888',fontSize:36,margin:2},
-  pagingActiveText:{color:'#fff',fontSize:36,margin:2}
+  pagingText:{color:'#888',fontSize:30,margin:2},
+  pagingActiveText:{color:'#fff',fontSize:30,margin:2}
 })

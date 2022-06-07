@@ -85,6 +85,28 @@
         "time":"上午10:30 - 下午21:00",
         "tel":"(02)2709-0363",
         "latitude": 25.025005938747448,
-        "longitude":   121.5463884822815
+        "longitude":121.5463884822815
+    },
+    {
+        "id": "09",
+        "id2":"9",
+        "name": "空杯",
+        "address": "10662台北市大安區和平東路二段118巷1號",
+        "image": "https://d1ralsognjng37.cloudfront.net/633d5813-f15b-4929-9db9-796d362f8244.jpeg?width=500",
+        "time":"上午11:00 - 下午21:30",
+        "tel":"(02)2736-5040",
+        "latitude":25.02255802096287, 
+        "longitude":121.54270506883911
+    },
+    {
+        "id": "10",
+        "id2":"10",
+        "name": "鳥日子",
+        "address": "106台北市大安區臥龍街20-5號",
+        "image": "https://scontent-tpe1-1.xx.fbcdn.net/v/t1.6435-9/109844000_146362370478627_6418526151486265594_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_ohc=iC2N_5y48wgAX9R7tfJ&_nc_ht=scontent-tpe1-1.xx&oh=00_AT8kjsHPJUD__phwqj8EIrn9Pfypxvm9nPk6Ah3-Ha2yoA&oe=62C42098",
+        "time":"上午11:00 - 下午19:00",
+        "tel":"(02)2732-7962",
+        "latitude":25.02349509213835,
+        "longitude":121.54637666921404
     }
  ]
