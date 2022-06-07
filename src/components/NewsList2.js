@@ -1,10 +1,10 @@
 import React ,{ useState, useEffect }from "react";
 import { Box, FlatList ,HStack,VStack,color,Text, AspectRatio,Image} from "native-base";
-import NewsDetail from "./NewsDetail";
+import NewsDetail2 from "./NewsDetail2";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import SearchBar from "./SearchBar";
-const NewsList = ({ list, navigation }) => {
-  const renderItem = ({ item }) => <NewsDetail drink={item} navigation={navigation} />;
+const NewsList2 = ({ list, navigation }) => {
+  const renderItem = ({ item }) => <NewsDetail2 drink={item} navigation={navigation} />;
   return (
     <Box>
     <FlatList
@@ -22,4 +22,4 @@ const NewsList = ({ list, navigation }) => {
   );  
 }
 
-export default NewsList;
+export default NewsList2;

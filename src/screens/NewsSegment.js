@@ -25,7 +25,7 @@ export default function TabVAccountSettingScreeniewExample() {
          <SegmentedControlTab
             values={["最新消息", "熱門貼文"]}
             tabStyle={{ 
-               marginTop: 10, borderColor: colorMode == "light" ? "#014e91" : "black", 
+               marginTop: 10,borderColor: colorMode == "light" ? "#014e91" : "black", 
                borderWidth: colorMode=="light"? 1: 4,
                backgroundColor: colorMode == "light" ? "#F4FAFF" : "black" 
             }}

@@ -4,7 +4,7 @@ import  Starrating from "./Starrating";
 import {Linking, TouchableOpacity} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const NewsDetail = ({ drink, navigation }) => {
+const NewsDetail2 = ({ drink, navigation }) => {
 
   const [toggle, setToggle] = useState(true);
     const toggleFunction = () => {
@@ -43,4 +43,4 @@ const NewsDetail = ({ drink, navigation }) => {
     </Box>
   )};
 
-export default NewsDetail;
+export default NewsDetail2;
